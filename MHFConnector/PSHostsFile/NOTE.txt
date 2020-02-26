@@ -1,0 +1,2 @@
+This is a trimmed version of https://github.com/tiago-aguiar-moreira/PSHostsFile/tree/upgrade-project
+which was forked from https://github.com/fschwiet/PSHostsFile
