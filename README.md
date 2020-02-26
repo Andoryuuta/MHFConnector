@@ -6,12 +6,16 @@ MHFConnector is a (really) small little utility to change the MHF hosts in your 
 ![screenshot](https://github.com/Andoryuuta/MHFConnector/raw/master/ss/screenshot.png)
 
 # About
+Prebuilt versions are available on the [releases page](https://github.com/Andoryuuta/MHFConnector/releases).
+
+
+## Internals:
 This is basically just two existing libraries cobbled together:
 * [PSHostsFile](https://github.com/fschwiet/PSHostsFile) for modifying the hosts file without overriding it.
 * [EasyHook](https://github.com/EasyHook/EasyHook) for hooking `CreateMutexA` and `OpenMutexA` for multi-client purposes. (Almost copied directly from the [example code](https://github.com/EasyHook/EasyHook-Tutorials/tree/master/Managed/RemoteFileMonitor))
 
-## Internals:
-All this does is add the specified IP to the hosts file.
+
+In specific, all this does is add the specified IP to the hosts file:
 
 E.g.
 ```
@@ -22,4 +26,4 @@ E.g.
 127.0.0.1 srv-mhf.capcom-networks.jp
 ```
 
-And makes `CreateMutexA|OpenMutexA (mutexName)` calls into `CreateMutexA|OpenMutexA (mutexName+processID)`, breaking the multi-client dectection mechanism.
+And essentially makes `CreateMutexA|OpenMutexA (mutexName)` calls into `CreateMutexA|OpenMutexA (mutexName+processID)` calls, breaking the multi-client dectection mechanism.
