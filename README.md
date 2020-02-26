@@ -1,6 +1,8 @@
 # MHFConnector
 MHFConnector is a (really) small little utility to change the MHF hosts in your `hosts` file to easily connect to a different MHF server, as well as allowing multiple clients to run.
 
+**Requires a modified client with gameguard removed to work.**
+
 ![screenshot](https://github.com/Andoryuuta/MHFConnector/raw/master/ss/screenshot.png)
 
 # About
