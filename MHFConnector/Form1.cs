@@ -34,17 +34,21 @@ namespace MHFConnector
         {
             // Resolved the entered host to an IPv4 address.
             IPAddress hostAddress = null;
-            try
+            if(!IPAddress.TryParse(hostTextBox.Text, out hostAddress))
             {
-                // Get first "InterNetwork" (IPv4) address.
-                hostAddress = Dns.GetHostEntry(hostTextBox.Text).AddressList
-                    .First(addr => addr.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork);
+                try
+                {
+                    // Get first "InterNetwork" (IPv4) address.
+                    hostAddress = Dns.GetHostEntry(hostTextBox.Text).AddressList
+                        .First(addr => addr.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK);
+                    return;
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK);
-                return;
-            }
+            
             
             // Set the hosts in /etc/hosts file.
             string[] hosts = { "mhfg.capcom.com.tw", "mhf-n.capcom.com.tw", "cog-members.mhf-z.jp", "www.capcom-onlinegames.jp", "srv-mhf.capcom-networks.jp" };
