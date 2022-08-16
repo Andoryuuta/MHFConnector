@@ -1,0 +1,4 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\Software\Wow6432Node\CAPCOM\Monster Hunter Frontier Online]
+"ExecPath"="C:\\YOUR\\MHF\\PATH\\mhf.exe"
