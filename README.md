@@ -5,6 +5,9 @@ MHFConnector is a (really) small little utility to change the MHF hosts in your 
 
 ![screenshot](https://github.com/Andoryuuta/MHFConnector/raw/master/ss/screenshot.png)
 
+# Installation
+MHFConnector assumes you have all the registry keys from a normal installation of JP version of the game client. If not, open `MHFConnector.reg` and replace `C:\\YOUR\\MHF\\PATH\\mhf.exe` with your path to the .exe, then run the .reg file to create the keys.
+
 # About
 Prebuilt versions are available on the [releases page](https://github.com/Andoryuuta/MHFConnector/releases).
 
